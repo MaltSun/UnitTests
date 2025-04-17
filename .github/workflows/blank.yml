@@ -24,10 +24,13 @@ jobs:
           dotnet-version: '8.0.x'
 
       - name: Restore dependencies
-        run: dotnet restore TestLab1/TestLab.csproj
+        run: dotnet restore
+        working-directory: TestLab1
 
       - name: Build
-        run: dotnet build TestLab1/TestLab.csproj --no-restore
+        run: dotnet build --no-restore
+        working-directory: TestLab1
 
       - name: Run tests
-        run: dotnet test TestLab1/TestLab.csproj --no-build
+        run: dotnet test --no-build
+        working-directory: TestLab1
