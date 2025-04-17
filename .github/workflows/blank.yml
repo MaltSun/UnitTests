@@ -21,13 +21,13 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '6.0.x'  # Укажите версию .NET, которая вам нужна
+        dotnet-version: '6.0.x'  
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore LibraryLab1/LibraryLab1.csproj 
 
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build LibraryLab1/LibraryLab1.csproj --configuration Release --no-restore
 
     - name: Run tests
-      run: dotnet test --configuration Release --no-build --verbosity normal
+      run: dotnet test TestLab1/TestLab1.csproj --configuration Release --no-build --verbosity normal
