@@ -15,17 +15,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+      - name: Checkout code
+        uses: actions/checkout@v2
 
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '6.0.x'  
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: '8.0.x'  
 
-    - name: Restore dependencies
-      run: dotnet restore TestLab1\TestLab.csproj
-    - name: Build
-      run: dotnet build TestLab1\TestLab.csproj
-    - name: Run tests
-      run: dotnet test TestLab1\TestLab.csproj
+      - name: Restore dependencies
+        run: dotnet restore TestLab1/TestLab.csproj
+
+      - name: Build
+        run: dotnet build TestLab1/TestLab.csproj --no-restore
+
+      - name: Run tests
+        run: dotnet test TestLab1/TestLab.csproj --no-build
