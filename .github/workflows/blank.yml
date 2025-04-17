@@ -24,10 +24,8 @@ jobs:
         dotnet-version: '6.0.x'  
 
     - name: Restore dependencies
-      run: dotnet restore TestLab1\UnitTest1.cs
-
+      run: dotnet restore TestLab1\TestLab.csproj
     - name: Build
-      run: dotnet build TestLab1\UnitTest1.cs
-
+      run: dotnet build TestLab1\TestLab.csproj
     - name: Run tests
-      run: dotnet test TestLab1\UnitTest1.cs
+      run: dotnet test TestLab1\TestLab.csproj
