@@ -23,14 +23,14 @@ jobs:
         with:
           dotnet-version: '8.0.x'
 
-      - name: Show directory structure (for debug)
-        run: ls -R
+      - name: Show repo files (debug)
+        run: ls -la
 
       - name: Restore dependencies
-        run: dotnet restore TestLab1/TestLab.csproj
+        run: dotnet restore ./TestLab.csproj
 
       - name: Build
-        run: dotnet build TestLab1/TestLab.csproj --no-restore
+        run: dotnet build ./TestLab.csproj --no-restore
 
       - name: Run tests
-        run: dotnet test TestLab1/TestLab.csproj --no-build
+        run: dotnet test ./TestLab.csproj --no-build
