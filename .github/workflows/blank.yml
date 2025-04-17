@@ -24,10 +24,10 @@ jobs:
         dotnet-version: '6.0.x'  
 
     - name: Restore dependencies
-      run: dotnet restore LibraryLab1/LibraryLab1.csproj 
+      run: dotnet restore TestLab1\UnitTest1.cs
 
     - name: Build
-      run: dotnet build LibraryLab1/LibraryLab1.csproj --configuration Release --no-restore
+      run: dotnet build TestLab1\UnitTest1.cs
 
     - name: Run tests
-      run: dotnet test TestLab1/TestLab1.csproj --configuration Release --no-build --verbosity normal
+      run: dotnet test TestLab1\UnitTest1.cs
